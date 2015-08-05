@@ -30,20 +30,36 @@
 
 # A print statement all by itself ends the current line and goes to the next line.
 
+
+
 # (2) Write a function that draws a similar grid with four rows and four columns.
 ################################################################################
 # Write your functions below:
 # Body
 
+def printpattern(char1, char2):
+	return char1 * 4 + char2
+
+def two_by_two(rownum):
+	if rownum == 1:
+		print '+' + printpattern('-','+') + printpattern('-','+')
+		return
+	elif rownum%5 == 1:
+		print '+' + printpattern('-','+') + printpattern('-','+')
+	else:
+		print '|' + printpattern(' ','|') + printpattern(' ','|')
+	two_by_two(rownum-1)
 
 
-
-
-
-
-
-
-
+def four_by_four(rownum):
+	if rownum == 1:
+		print '+' + printpattern('-','+') + printpattern('-','+') + printpattern('-','+') + printpattern('-','+') 
+		return
+	elif rownum%5 == 1:
+		print '+' + printpattern('-','+') + printpattern('-','+') + printpattern('-','+') + printpattern('-','+') 
+	else:
+		print '|' + printpattern(' ','|') + printpattern(' ','|') + printpattern(' ','|') + printpattern(' ','|') 
+	four_by_four(rownum-1)
 
 
 # Write your functions above:
@@ -54,6 +70,10 @@ def main():
     two_by_two()
     four_by_four()
     """
+    a = 5*2+1 #Setting length for two by two square
+    b = 5*4+1 #Setting length for two by two square
+    two_by_two(a)
+    four_by_four(b)
     print("Hello World!")
     
 
